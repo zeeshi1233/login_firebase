@@ -1,0 +1,92 @@
+ 
+ {
+
+    "html":[
+        {
+"ques":"what is Html",
+"op1":"Hyper Text",
+"op2":"Hyper Text Markup Language",
+"op3":"Hyper Text Markup Lang",
+"op4":"Text Hyper Markup Lang",
+"ans": "Hyper Text Markup Language"
+},
+{
+   "ques": "Which HTML tag is used to define an unordered list?",
+   "op1":"ul" ,
+    "op2":"ol",
+     "op3":"li",
+     "op4":"dl",
+     "ans": "ul"
+},
+{
+   "ques": "What is the correct HTML tag for inserting a line break?",
+    "op1": "lb",
+    "op2": "br",
+    "op3": "break",
+    "op4": "line",
+   "ans": "br"
+}
+],
+
+
+"css":[
+    {
+        "ques": "What is the purpose of the HTML head element?",
+ 
+            "op1":"To define the main content of the document",
+            "op2":"To define the footer section of the document",
+            "op3":"To define the header section of the document",
+            "op4":"To contain metadata and other document-level information",
+        "ans": "To contain metadata and other document-level information"
+
+},
+{
+"ques": "Which property is used to change the background color of an element in CSS?",
+"op1":"text-color",
+"op2":"background-color",
+ "op3":"color",
+ "op4": "bg-color",
+ "ans": "background-color"
+},
+{
+"ques": "How do you select an element with the class \"example\" in CSS?",
+"op1": "#example",
+"op2": ".example",
+"op3": "example",
+"op4": "$example",
+"ans": ".example"
+}
+],
+
+
+"js":[
+    {
+        "ques": "Inside which HTML element do we put the JavaScript??",
+        "op1": "script",
+        "op2": "javascript",
+        "op3": "js",
+        "op4": "scripting",
+        "ans": "script"
+      },
+      {
+        "ques": "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        "op1": "script href='xxx.js'",
+        "op2": "script name='xxx.js'",
+        "op3": "script src='xxx.js'",
+        "op4": "script file='xxx.js'",
+        "ans": "script src='xxx.js'"
+      },
+      {
+        "ques": " How do you write 'Hello World' in an alert box?",
+        "op1": "msgBox('Hello World');",
+        "op2": "alertBox('Hello World');",
+        "op3": "msg('Hello World');",
+        "op4": "alert('Hello World');",
+        "ans": "alert('Hello World');"
+      }
+]
+
+   }
+   
+
+

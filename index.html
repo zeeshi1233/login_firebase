@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Style Links -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Quiz</title>
+</head>
+
+<body>
+  <button id="logout-btn">Logout</button>
+
+ 
+  <p id="username">hi</p>
+
+  <h1 class="text-center">Front-End Quiz</h1>
+  <div class="container" id="cont">
+
+    <div class="html">
+      <span><i class="fa-brands fa-html5"></i></span>
+      <h3>HTML Quiz</h3>
+      <button id="btn" onclick="first()">Start Quiz</button>
+    </div>
+    <div class="css">
+      <span><i class="fa-brands fa-css3-alt"></i></span>
+      <h3>CSS Quiz</h3>
+      <button id="btn" onclick="sec()">Start Quiz</button>
+    </div>
+    <div class="js">
+      <span><i class="fa-brands fa-js"></i></span>
+      <h3>JavaScript Quiz</h3>
+      <button onclick="third()">Start Quiz</button>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+  <div class="quiz" id="first">
+    <div class="opt">
+      <h5 id="question"></h5>
+
+      <input type="radio" name="ans" id="op1">
+      <label for="op1" id="qn1"></label><br>
+      <input type="radio" name="ans" id="op2">
+      <label for="op2" id="qn2"></label><br>
+      <input type="radio" name="ans" id="op3">
+      <label for="op3" id="qn3"></label><br>
+      <input type="radio" name="ans" id="op4">
+      <label for="op4" id="qn4"></label>
+      <br>
+      <button id="next">Next</button>
+      <br>
+    </div>
+  </div>
+
+  <!-- second quiz -->
+
+  <div class="quiz" id="second">
+    <div class="opt">
+      <h5 id="css_ques"></h5>
+
+      <input type="radio" name="css" id="css1">
+      <label for="css1" id="cs1"></label><br>
+      <input type="radio" name="css" id="css2">
+      <label for="css2" id="cs2"></label><br>
+      <input type="radio" name="css" id="css3">
+      <label for="css3" id="cs3"></label><br>
+      <input type="radio" name="css" id="css4">
+      <label for="css4" id="cs4"></label>
+      <br>
+      <button id="csnext">Next</button>
+      <br>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- third quiz -->
+
+  <div class="quiz" id="third">
+    <div class="opt">
+      <h5 id="js_ques"></h5>
+
+      <input type="radio" name="js" id="jss1">
+      <label for="jss1" id="js1"></label><br>
+      <input type="radio" name="js" id="jss2">
+      <label for="jss2" id="js2"></label><br>
+      <input type="radio" name="js" id="jss3">
+      <label for="jss3" id="js3"></label><br>
+      <input type="radio" name="js" id="jss4">
+      <label for="jss4" id="js4"></label>
+      <br>
+      <button id="jsnext">Next</button>
+      <br>
+    </div>
+  </div>
+
+
+
+
+
+
+  <center>
+
+    <div class="load" id="load">
+      <div class="circular-progress">
+        <span class="progress-value">0%</span>
+      </div>
+      <span class="text" id="grd"></span>
+    </div>
+
+
+  </center>
+
+
+
+
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBmx4rIxOPi0zgNFTMQ80v21dvntSEmmVE",
+      authDomain: "studentrecord-b7471.firebaseapp.com",
+      databaseURL: "https://studentrecord-b7471-default-rtdb.firebaseio.com",
+      projectId: "studentrecord-b7471",
+      storageBucket: "studentrecord-b7471.appspot.com",
+      messagingSenderId: "332868527063",
+      appId: "1:332868527063:web:c45a6f848a32e21b0fe192",
+      measurementId: "G-C7LPQXXQ0M"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        document.getElementById("username").innerHTML = "Login"
+
+      } else {
+        window.location.href = "login.html"
+      }
+    });
+
+
+
+    const logoutBtn = document.querySelector('#logout-btn');
+    logoutBtn.addEventListener('click', e => {
+      e.preventDefault();
+      auth.signOut();
+      console.log('User signed out!');
+    })
+
+  </script>
+
+
+
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
